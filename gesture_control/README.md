@@ -1,255 +1,239 @@
-# GestureControl
+GesturX
 
 A next-generation AI-based Hand Gesture Human-Computer Interaction (HCI) system built with Python, OpenCV, MediaPipe, and PyAutoGUI.
 
-## Features
+🚀 Features
+Core Features
 
-### Core Features
-- **Real-time Hand Tracking** - Using MediaPipe's state-of-the-art 21-landmark hand detection
-- **Gesture Classification** - Advanced angle and distance-based gesture recognition
-- **Mouse Control** - Move mouse cursor, left/right click with hand gestures
-- **Scroll Control** - Scroll up/down with finger gestures
+Real-time Hand Tracking – Uses MediaPipe’s 21-landmark hand detection
 
-### Advanced Features
-- **Confidence Scoring** - Provides reliability metrics for each detection
-- **Gesture Debounce** - Prevents accidental multiple triggers
-- **Multiple Control Modes:**
-  - Mouse Mode - Standard mouse control
-  - Scroll Mode - Scroll-focused control
-  - Presentation Mode - Navigate slides with gestures
+Gesture Classification – Angle and distance-based gesture recognition
 
-### UI/UX
-- **On-screen Dashboard** - Real-time display of:
-  - Current FPS
-  - Detected gesture
-  - Control mode
-  - Confidence score
-- **Visual Feedback** - Clear indication of current system state
-- **Customizable Themes** - Dark, light, or transparent themes
+Mouse Control – Cursor movement, left click, right click using gestures
 
-### Technical Features
-- **Modular Architecture** - Clean separation of concerns
-- **YAML Configuration** - Easy customization without code changes
-- **Comprehensive Logging** - Track gestures, actions, and system performance
+Scroll Control – Smooth vertical scrolling via finger gestures
 
-## Installation
+Advanced Features
 
-### Prerequisites
-- Python 3.8 or higher
-- Webcam
-- A computer with moderate processing power
+Confidence Scoring – Reliability score for each detected gesture
 
-### Install Dependencies
+Gesture Debounce – Prevents accidental repeated actions
 
-```
-bash
+Multiple Control Modes
+
+Mouse Mode
+
+Scroll Mode
+
+Presentation Mode
+
+UI / UX
+
+On-screen Dashboard
+
+FPS
+
+Detected gesture
+
+Current control mode
+
+Confidence score
+
+Visual Feedback – Clear system state indication
+
+Customizable Themes – Dark, light, transparent
+
+Technical Highlights
+
+Modular Architecture
+
+YAML-based Configuration
+
+Comprehensive Logging System
+
+🛠 Installation
+Prerequisites
+
+Python 3.8 or higher
+
+Webcam
+
+Moderate processing power system
+
+Install Dependencies
 # Navigate to the project directory
-cd gesture_control
+cd gesturx
 
 # Create virtual environment (recommended)
 python -m venv venv
 
 # Activate virtual environment
-# On Windows:
+# Windows
 venv\Scripts\activate
-# On macOS/Linux:
+
+# macOS / Linux
 source venv/bin/activate
 
-# Install dependencies
+# Install required packages
 pip install -r requirements.txt
-```
 
-## Usage
-
-### Basic Usage
-
-```
-bash
-# Run with default settings
+▶️ Usage
+Basic Run
 python main.py
-```
 
-### Advanced Options
-
-```
-bash
-# Run with custom configuration
+Advanced Options
 python main.py --config path/to/config.yaml
-
-# Start in calibration mode
 python main.py --calibrate
-
-# List available control modes
 python main.py --list-modes
-
-# Show help
 python main.py --help
-```
 
-### Controls
+🎮 Controls
+Key	Action
+Q	Quit
+M	Switch control modes
+C	Start calibration
+S	Toggle mouse smoothing
++	Increase cursor speed
+-	Decrease cursor speed
+✋ Implemented Gestures
+Mouse Mode
+Gesture	Action
+Index finger only	Move cursor
+Index curled + Middle extended	Left click
+Middle curled + Index extended	Right click
+Index + Middle + Ring extended	Scroll up
+Scroll Mode
+Gesture	Action
+Two fingers up	Scroll up
+Two fingers down	Scroll down
+Presentation Mode
+Gesture	Action
+Index pointing right	Next slide
+⚙ Configuration
 
-| Key | Action |
-|-----|--------|
-| Q | Quit application |
-| M | Cycle through control modes |
-| C | Start calibration |
-| S | Toggle mouse smoothing |
-| + | Increase mouse speed |
-| - | Decrease mouse speed |
+Configuration file: config/config.yaml
 
-## Implemented Gestures
-
-### Mouse Mode
-| Gesture | Action |
-|---------|--------|
-| Index finger extended (only) | Move mouse cursor |
-| Index curled + Middle extended | Left click |
-| Middle curled + Index extended | Right click |
-| Index + Middle + Ring extended | Scroll up |
-
-### Scroll Mode
-| Gesture | Action |
-|---------|--------|
-| Two fingers up | Scroll up |
-| Two fingers down | Scroll down |
-
-### Presentation Mode
-| Gesture | Action |
-|---------|--------|
-| Index pointing right | Next slide |
-
-## Configuration
-
-Configuration is managed through `config/config.yaml`. Key settings include:
-
-### Hand Tracking
-```
-yaml
+Hand Tracking
 hand_tracking:
-  detection_confidence: 0.7   # Higher = more strict detection
-  tracking_confidence: 0.7  # Higher = more stable tracking
-  model_complexity: 1        # 0=Lite, 1=Full, 2=Extra Lite
-  max_hands: 1              # Maximum hands to detect
-```
+  detection_confidence: 0.7
+  tracking_confidence: 0.7
+  model_complexity: 1
+  max_hands: 1
 
-### Gesture Recognition
-```
-yaml
+Gesture Recognition
 gesture:
-  angle_threshold: 50.0       # Angle threshold for finger states
-  distance_threshold: 50.0    # Distance threshold for gestures
-  confidence_threshold: 0.7   # Minimum confidence to trigger action
-  debounce_time: 300          # Milliseconds between gesture triggers
-  finger_extended_angle: 90.0 # Angle for extended finger detection
-```
+  angle_threshold: 50.0
+  distance_threshold: 50.0
+  confidence_threshold: 0.7
+  debounce_time: 300
+  finger_extended_angle: 90.0
 
-### Mouse Control
-```
-yaml
+Mouse Control
 mouse:
-  movement_speed: 1.0        # Speed multiplier (0.1 to 2.0)
-  scroll_speed: 3           # Scroll steps per gesture
-  smoothing: true           # Apply movement smoothing
-  smoothing_factor: 0.3     # Lower = smoother but slower
-```
+  movement_speed: 1.0
+  scroll_speed: 3
+  smoothing: true
+  smoothing_factor: 0.3
 
-### UI Dashboard
-```
-yaml
+UI Dashboard
 ui:
-  show_fps: true            # Show FPS counter
-  show_gesture: true        # Show detected gesture
-  show_mode: true           # Show control mode
-  show_confidence: true     # Show confidence score
-  show_landmarks: true      # Draw hand landmarks on video
-  position: "top-left"     # Dashboard position
-  theme: "dark"            # Theme: dark, light, transparent
-```
+  show_fps: true
+  show_gesture: true
+  show_mode: true
+  show_confidence: true
+  show_landmarks: true
+  position: "top-left"
+  theme: "dark"
 
-### Logging
-```
-yaml
+Logging
 logging:
-  enabled: true             # Enable logging
-  level: "INFO"            # Log level: DEBUG, INFO, WARNING, ERROR
-  log_file: "gesture_control.log"  # Log file path
-  log_gestures: true       # Log detected gestures
-  log_actions: true        # Log executed actions
-  log_to_json: false       # Export logs to JSON
-```
+  enabled: true
+  level: "INFO"
+  log_file: "gesturx.log"
+  log_gestures: true
+  log_actions: true
+  log_to_json: false
 
-## Project Structure
-
-```
-gesture_control/
+📁 Project Structure
+gesturx/
 ├── src/
-│   ├── hand_tracking/       # MediaPipe hand detection
-│   │   └── hand_tracker.py # Hand landmark detection
-│   ├── gesture_recognition/ # Gesture classification
-│   │   ├── gesture_classifier.py  # Gesture detection logic
-│   │   └── gesture_models.py      # Gesture types and configs
-│   ├── actions/            # Mouse/keyboard actions
-│   │   └── mouse_actions.py       # Action execution
-│   ├── ui/                 # Dashboard overlay
-│   │   └── dashboard.py    # On-screen display
-│   ├── calibration/        # User calibration
-│   │   └── calibration.py  # Calibration manager
-│   ├── config/             # Configuration management
-│   │   └── settings.py     # Settings loader
-│   └── utils/              # Logging utilities
-│       └── logger.py       # Logging system
+│   ├── hand_tracking/
+│   │   └── hand_tracker.py
+│   ├── gesture_recognition/
+│   │   ├── gesture_classifier.py
+│   │   └── gesture_models.py
+│   ├── actions/
+│   │   └── mouse_actions.py
+│   ├── ui/
+│   │   └── dashboard.py
+│   ├── calibration/
+│   │   └── calibration.py
+│   ├── config/
+│   │   └── settings.py
+│   └── utils/
+│       └── logger.py
 ├── config/
-│   └── config.yaml         # Configuration file
-├── main.py                 # Entry point
-├── requirements.txt        # Dependencies
-├── README.md               # This file
-└── LICENSE                 # License
-```
+│   └── config.yaml
+├── main.py
+├── requirements.txt
+├── README.md
+└── LICENSE
 
-## Troubleshooting
+🧪 Troubleshooting
+Camera Not Detected
 
-### Camera not detected
-- Check if camera is connected
-- Try a different camera ID in config (default: 0)
-- Ensure no other application is using the camera
+Ensure webcam is connected
 
-### Gestures not detected
-- Ensure good lighting
-- Position hand clearly in camera view
-- Make hand faces the camera (palm facing camera)
-- Adjust confidence thresholds in config
+Change camera ID in config (default: 0)
 
-### Mouse too fast/slow
-- Use +/- keys to adjust speed
-- Toggle smoothing with S key
-- Adjust movement_speed in config
+Close other apps using the camera
 
-### Low FPS
-- Reduce frame resolution in config
-- Disable show_landmarks in config
-- Use model_complexity: 0 for faster processing
+Gestures Not Recognized
 
-## Planned Features
+Improve lighting
 
-The following features have action handlers implemented but are not yet connected to gesture detection:
-- Double click
-- Screenshot capture
-- Drag and drop
-- Zoom in/out
-- Previous slide navigation
-- Multi-hand support
+Keep palm facing the camera
 
-## License
+Adjust confidence thresholds
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Cursor Speed Issues
 
-## Acknowledgments
+Use + / - keys
 
-- [MediaPipe](https://mediapipe.dev/) for hand tracking
-- [OpenCV](https://opencv.org/) for image processing
-- [PyAutoGUI](https://pyautogui.readthedocs.io/) for cross-platform GUI automation
-- [pynput](https://pynput.readthedocs.io/) for precise mouse control
+Toggle smoothing using S
 
----
+Modify movement_speed in config
 
-Built with ❤️ for the future of human-computer interaction
+Low FPS
+
+Disable landmarks
+
+Reduce resolution
+
+Use model_complexity: 0
+
+🔮 Planned Features
+
+Double click
+
+Screenshot capture
+
+Drag & drop
+
+Zoom in / out
+
+Previous slide gesture
+
+Multi-hand support
+
+🙌 Acknowledgments
+
+MediaPipe – Hand tracking
+
+OpenCV – Computer vision
+
+PyAutoGUI – Mouse automation
+
+pynput – Input control
+
+Built with ❤️ to redefine touchless human–computer interaction
