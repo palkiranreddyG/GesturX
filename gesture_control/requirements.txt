@@ -1,0 +1,20 @@
+# GestureControl Requirements
+# AI-based Hand Gesture Human-Computer Interaction System
+
+# Core dependencies
+opencv-python>=4.8.0
+mediapipe>=0.10.0
+pyautogui>=0.9.54
+pynput>=1.7.6
+numpy>=1.24.0
+
+# Configuration
+pyyaml>=6.0
+
+# Optional: For enhanced logging
+# Already included in standard library
+
+# Development/Testing (optional)
+# pytest>=7.0.0
+# black>=23.0.0
+# flake8>=6.0.0

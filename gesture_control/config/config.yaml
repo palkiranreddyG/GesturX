@@ -1,0 +1,62 @@
+# GestureControl Configuration File
+# AI-based Hand Gesture Human-Computer Interaction System
+
+# Hand Tracking Settings
+hand_tracking:
+  static_image_mode: false
+  max_hands: 1
+  detection_confidence: 0.7
+  tracking_confidence: 0.7
+  model_complexity: 1
+
+# Gesture Recognition Settings
+gesture:
+  angle_threshold: 50.0
+  distance_threshold: 50.0
+  confidence_threshold: 0.7
+  debounce_time: 300
+  finger_extended_angle: 90.0
+  finger_curled_angle: 50.0
+  thumb_index_close: 50.0
+  thumb_index_far: 100.0
+  movement_sensitivity: 0.02
+  scroll_sensitivity: 3.0
+
+# Mouse Control Settings
+mouse:
+  movement_speed: 1.0
+  scroll_speed: 3.0
+  smoothing: true
+  smoothing_factor: 0.3
+
+# UI Dashboard Settings
+ui:
+  show_fps: true
+  show_gesture: true
+  show_mode: true
+  show_confidence: true
+  show_landmarks: true
+  position: "top-left"
+  theme: "dark"
+
+# Logging Settings
+logging:
+  enabled: true
+  level: "INFO"
+  log_file: "gesture_control.log"
+  log_gestures: true
+  log_actions: true
+  log_to_json: false
+  log_stats_interval: 60
+
+# Camera Settings
+camera_id: 0
+frame_width: 1280
+frame_height: 720
+
+# Control Modes
+default_mode: "mouse"
+available_modes:
+  - "mouse"
+  - "scroll"
+  - "presentation"
